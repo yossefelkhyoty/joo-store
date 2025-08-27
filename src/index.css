@@ -1,0 +1,19 @@
+:root {
+    --backgroud: #E8ECEF;
+    --secondcolor: blueviolet;
+    --orange: #ff7b00;
+    --orange-gradient: linear-gradient(90deg, #ff4500, #8a2be2);
+    --shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+body {
+    background: var(--backgroud);
+}

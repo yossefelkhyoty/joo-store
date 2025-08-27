@@ -1,0 +1,158 @@
+/* about.css - الإصدار المحسن */
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  min-height: 80vh;
+  padding: 2rem 0;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.about img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  transition: all 0.5s ease-in-out;
+  border-radius: 15px;
+}
+
+.about img:hover {
+  transform: scale(1.05);
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-text h1 {
+  text-align: center;
+  color: var(--orange);
+  transition: all 0.3s ease-in-out;
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.about-text h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--orange), #ff8c00);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.about-text h1:hover {
+  transform: translateY(-5px);
+}
+
+.about-text h1:hover::after {
+  width: 120px;
+}
+
+.about-text p {
+  line-height: 1.8;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+  color: #444;
+  text-align: justify;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* تأثيرات ظهور عند التحميل */
+.about {
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .about-text {
+    max-width: 100%;
+  }
+  
+  .about-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .about-text p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 1.5rem 0;
+  }
+  
+  .about-text h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+  
+  .about img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-text h1 {
+    font-size: 1.8rem;
+  }
+  
+  .about-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .about-text h1::after {
+    width: 60px;
+    height: 3px;
+  }
+  
+  .about-text h1:hover::after {
+    width: 90px;
+  }
+}

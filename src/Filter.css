@@ -1,0 +1,89 @@
+.filter {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter h3 {
+  font-size: 23px;
+  margin-top: 0;
+  color: var(--primary);
+  border-bottom: 2px solid var(--orange);
+  padding-bottom: 10px;
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 180px;
+}
+
+.filter-group label {
+  font-size: 23px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-btn,
+.reset-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-size: 23px;
+}
+
+.filter-btn {
+  background-color: #4c73a2;
+  color: black;
+}
+
+.filter-btn:hover {
+  background-color: #3a5a80;
+}
+
+.reset-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+.reset-btn:hover {
+  background-color: #5a6268;
+}
+
+@media (max-width: 768px) {
+  .filter-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-buttons {
+    flex-direction: column;
+  }
+}
