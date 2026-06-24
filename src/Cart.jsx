@@ -1,8 +1,9 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import { useApp } from './context/useApp';
 import './Cart.css';
 
-function Cart({ cartItems, updateQuantity, removeFromCart }) {
+function Cart() {
+    const { cartItems, updateQuantity, removeFromCart } = useApp();
     const totalPrice = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
 
     return (
@@ -11,9 +12,9 @@ function Cart({ cartItems, updateQuantity, removeFromCart }) {
 
             {cartItems.length === 0 ? (
                 <div className="empty-cart">
-                    <i className="fas fa-shopping-cart"></i>
+                    <i className="fas fa-shopping-cart" aria-hidden="true" />
                     <h2>Your cart is empty</h2>
-                    <p>You haven't added any products yet</p>
+                    <p>You haven&apos;t added any products yet. Start exploring our collection!</p>
                     <Link to="/products" className="continue-shopping">
                         Continue Shopping
                     </Link>
@@ -30,19 +31,23 @@ function Cart({ cartItems, updateQuantity, removeFromCart }) {
                                 <div className="item-details">
                                     <h3>{item.title}</h3>
                                     <p className="item-category">{item.category}</p>
-                                    <p className="item-price">${item.price}</p>
+                                    <p className="item-price">${item.price.toFixed(2)}</p>
                                 </div>
 
                                 <div className="quantity-controls">
                                     <button
+                                        type="button"
                                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
                                         disabled={item.quantity <= 1}
+                                        aria-label="Decrease quantity"
                                     >
                                         -
                                     </button>
-                                    <span>{item.quantity}</span>
+                                    <span aria-label={`Quantity: ${item.quantity}`}>{item.quantity}</span>
                                     <button
+                                        type="button"
                                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                                        aria-label="Increase quantity"
                                     >
                                         +
                                     </button>
@@ -53,10 +58,12 @@ function Cart({ cartItems, updateQuantity, removeFromCart }) {
                                 </div>
 
                                 <button
+                                    type="button"
                                     className="remove-item"
                                     onClick={() => removeFromCart(item.id)}
+                                    aria-label={`Remove ${item.title} from cart`}
                                 >
-                                    <i className="fas fa-trash"></i>
+                                    <i className="fas fa-trash" aria-hidden="true" />
                                 </button>
                             </div>
                         ))}
@@ -80,11 +87,11 @@ function Cart({ cartItems, updateQuantity, removeFromCart }) {
                             <span>${totalPrice.toFixed(2)}</span>
                         </div>
 
-                        <button className="checkout-btn">
+                        <Link to="/checkout" className="checkout-btn">
                             Proceed to Checkout
-                        </button>
+                        </Link>
 
-                        <Link to="/products" className="continue-shopping">
+                        <Link to="/products" className="continue-shopping-link">
                             ← Continue Shopping
                         </Link>
                     </div>

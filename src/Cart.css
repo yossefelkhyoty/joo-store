@@ -192,6 +192,7 @@
 }
 
 .checkout-btn {
+  display: block;
   width: 100%;
   padding: 15px;
   background: linear-gradient(90deg, var(--orange), #ff8c00);
@@ -203,6 +204,21 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 1.5rem 0;
+  text-align: center;
+  text-decoration: none;
+}
+
+.continue-shopping-link {
+  display: block;
+  text-align: center;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.continue-shopping-link:hover {
+  color: var(--orange);
 }
 
 .checkout-btn:hover {

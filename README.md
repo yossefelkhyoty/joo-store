@@ -1,12 +1,58 @@
-# React + Vite
+# Joo Store 🛒
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Joo Store**, a modern e-commerce front-end application built with React and Vite.
 
-Currently, two official plugins are available:
+## 🌟 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check out the live application here: [Joo Store Live Demo](https://yossefelkhyoty.github.io/joo-store)
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React 19**
+- **React Router DOM v7** (for client-side routing)
+- **Vite** (for fast build and development)
+- **Vanilla CSS** (for responsive and custom styling)
+
+## 🚀 Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+### Installation
+
+1. Clone the repository
+   ```sh
+   git clone <repository-url>
+   ```
+2. Navigate into the project directory
+   ```sh
+   cd my-app
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Start the development server
+   ```sh
+   npm run dev
+   ```
+
+## 📜 Available Scripts
+
+In the project directory, you can run:
+
+- `npm run dev`: Starts the development server.
+- `npm run build`: Builds the app for production to the `dist` folder.
+- `npm run preview`: Locally preview the production build.
+- `npm run deploy`: Deploys the project to GitHub Pages.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## 📝 License
+
+This project is open-source and available under the [MIT License](LICENSE).

@@ -1,21 +1,17 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useApp } from './context/useApp';
 import './Auth.css';
 
 function Login() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
+  const { login } = useApp();
+  const [formData, setFormData] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async (e) => {
@@ -23,53 +19,51 @@ function Login() {
     setLoading(true);
     setError('');
 
-    try {
-      // Simulate login process
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Save user data to localStorage
-      localStorage.setItem('user', JSON.stringify({
-        email: formData.email,
-        name: formData.email.split('@')[0],
-        loggedIn: true
-      }));
+    await new Promise(resolve => setTimeout(resolve, 800));
 
+    const result = login(formData);
+
+    if (result.success) {
       navigate('/');
-    } catch {
-      // Remove unused 'err' parameter
-      setError('Login failed. Please check your credentials.');
-    } finally {
-      setLoading(false);
+    } else {
+      setError(result.error);
     }
+
+    setLoading(false);
   };
 
   return (
     <div className="auth-container">
       <div className="auth-form">
         <h2>Login to Your Account</h2>
-        {error && <div className="error-message">{error}</div>}
-        
-        <form onSubmit={handleSubmit}>
+        {error && <div className="error-message" role="alert">{error}</div>}
+
+        <form onSubmit={handleSubmit} noValidate>
           <div className="form-group">
-            <label>Email Address:</label>
+            <label htmlFor="login-email">Email Address</label>
             <input
+              id="login-email"
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               required
+              autoComplete="email"
               placeholder="Enter your email"
             />
           </div>
 
           <div className="form-group">
-            <label>Password:</label>
+            <label htmlFor="login-password">Password</label>
             <input
+              id="login-password"
               type="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
               required
+              autoComplete="current-password"
+              minLength={6}
               placeholder="Enter your password"
             />
           </div>
@@ -80,7 +74,7 @@ function Login() {
         </form>
 
         <p className="auth-link">
-          Don't have an account? <Link to="/register">Register here</Link>
+          Don&apos;t have an account? <Link to="/register">Register here</Link>
         </p>
       </div>
     </div>

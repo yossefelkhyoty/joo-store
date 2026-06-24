@@ -22,6 +22,40 @@
   animation: fadeIn 1s ease-in-out;
 }
 
+.home-badge {
+  display: inline-block;
+  background: rgba(255, 123, 0, 0.1);
+  color: var(--orange);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.home-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat strong {
+  font-size: 1.5rem;
+  color: var(--orange);
+}
+
+.stat span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
 .home-text h1 {
   font-size: 4.5rem;
   letter-spacing: 2px;

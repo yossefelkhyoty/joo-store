@@ -1,29 +1,46 @@
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
+import homeImg from "./assets/homePage.png";
 
 function Home() {
   const navigate = useNavigate();
 
-  const goToProducts = () => {
-    navigate("/products");
-  };
-  const goToRegister = () => {
-    navigate("/register");
-  };
-
   return (
     <div className="container home">
       <div className="home-text">
+        <span className="home-badge">Your One-Stop Shop</span>
         <h1>Joo Store</h1>
-        <h5>Welcome to my store</h5>
-        <p>What you want you will find here</p>
+        <h5>Quality Products, Fair Prices</h5>
+        <p>Discover curated essentials and unique finds — delivered with style and convenience.</p>
         <div className="home-buttons">
-          <button onClick={goToRegister} className="join-us-btn">Join Us</button>
-          <button onClick={goToProducts} className="shop-now-btn">Shop Now</button>
+          <button onClick={() => navigate("/register")} className="join-us-btn">
+            Join Us
+          </button>
+          <button onClick={() => navigate("/products")} className="shop-now-btn">
+            Shop Now
+          </button>
+        </div>
+        <div className="home-stats">
+          <div className="stat">
+            <strong>20+</strong>
+            <span>Products</span>
+          </div>
+          <div className="stat">
+            <strong>Free</strong>
+            <span>Shipping</span>
+          </div>
+          <div className="stat">
+            <strong>24/7</strong>
+            <span>Support</span>
+          </div>
         </div>
       </div>
       <div className="home-image">
-        <img src="shopping.png" alt="Online Shopping" />
+        <img
+          src={homeImg}       
+          alt="Person shopping online with bags and packages"
+          loading="eager"
+        />
       </div>
     </div>
   );

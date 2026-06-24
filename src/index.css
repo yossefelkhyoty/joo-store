@@ -1,19 +1,44 @@
 :root {
     --backgroud: #E8ECEF;
-    --secondcolor: blueviolet;
+    --primary: #4a6fa5;
+    --secondcolor: #4a6fa5;
+    --secondary: #ff6b6b;
     --orange: #ff7b00;
+    --dark: #343a40;
     --orange-gradient: linear-gradient(90deg, #ff4500, #8a2be2);
     --shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 .container {
     max-width: 1600px;
     margin: 0 auto;
     padding: 20px;
-    
 }
 
 body {
+    margin: 0;
     background: var(--backgroud);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    color: #333;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 2px;
 }

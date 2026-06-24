@@ -1,4 +1,65 @@
-.notfound h1{
-    text-align: center;
-    font-size: 100px;
+.notfound {
+  text-align: center;
+  padding: 4rem 2rem;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.notfound-code {
+  font-size: 8rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, var(--orange), #8a2be2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+}
+
+.notfound h1 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  color: var(--dark);
+}
+
+.notfound p {
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+
+.notfound-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.notfound-btn {
+  padding: 12px 28px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 2px solid var(--orange);
+  color: var(--orange);
+}
+
+.notfound-btn.primary {
+  background: linear-gradient(90deg, var(--orange), #ff8c00);
+  color: white;
+  border-color: transparent;
+}
+
+.notfound-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 123, 0, 0.3);
+}
+
+@media (max-width: 480px) {
+  .notfound-code {
+    font-size: 5rem;
+  }
 }

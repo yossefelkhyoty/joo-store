@@ -36,9 +36,13 @@
   padding: 1rem;
 }
 
+.proudct-card {
+  flex: 0 0 auto;
+}
+
 .card {
-  width: 350px;
-  min-height: 500px;
+  width: 320px;
+  min-height: 460px;
   box-shadow: var(--shadow);
   background-color: white;
   border-radius: 12px;
@@ -56,12 +60,19 @@
   box-shadow: var(--shadow-hover);
 }
 
+.card-image-wrap {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+  background: #fafafa;
+}
+
 .card img {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   object-fit: contain;
-  padding: 20px 0;
-  margin: 0 auto;
 }
 
 
@@ -102,27 +113,59 @@
   justify-content: space-between;
 }
 
-.card button {
-  border: none;
-  border-radius: 30px;
-  background-color: var(--orange);
-  width: 80%;
-  height: 50px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  transition: all 0.3s ease-in-out;
-  color: white;
-  margin: 1.5rem auto;
-  cursor: pointer;
-  display: block;
-  text-decoration-line: none;
+.card-actions {
+  display: flex;
+  gap: 10px;
+  padding: 0 1.5rem 1.5rem;
 }
 
+.card-actions button {
+  flex: 1;
+  border: none;
+  border-radius: 25px;
+  height: 44px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-.card button:hover {
-  transform: scale(1.05);
-  background: var(--orange-gradient);
-  box-shadow: 0 5px 15px rgba(255, 123, 0, 0.4);
+.add-cart-btn {
+  background: var(--orange);
+  color: white;
+}
+
+.add-cart-btn:hover {
+  background: linear-gradient(90deg, #ff4500, #8a2be2);
+}
+
+.view-btn {
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary) !important;
+}
+
+.view-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.no-products {
+  text-align: center;
+  padding: 3rem;
+  width: 100%;
+  color: #666;
+}
+
+.no-products i {
+  font-size: 3rem;
+  color: #ddd;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.no-products p {
+  margin-bottom: 1rem;
 }
 
 
