@@ -42,7 +42,7 @@ function AppContent() {
 
 function App() {
   return (
-    <BrowserRouter basename="/joo-store">
+    <BrowserRouter>
       <AppProvider>
         <AppContent />
       </AppProvider>
