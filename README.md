@@ -4,7 +4,7 @@ Welcome to **Joo Store**, a modern e-commerce front-end application built with R
 
 ## 🌟 Live Demo
 
-Check out the live application here: [Joo Store Live Demo](https://yossefelkhyoty.github.io/joo-store)
+Check out the live application here: [Joo Store Live Demo](https://joo-store-one.vercel.app/)
 
 ## 🛠️ Tech Stack
 
